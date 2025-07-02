@@ -1,0 +1,35 @@
+# Este es el nombre de la tarea que el Ayudante va a hacer.
+name: Llevar mi Dibujo a la Pared Mágica
+
+# Dile al Ayudante cuándo debe empezar a trabajar.
+# Aquí le decimos: "¡Cada vez que alguien ponga un dibujo nuevo en el álbum principal!"
+on:
+  push:
+    branches:
+      - main # O el nombre de tu álbum principal (a veces es "master").
+
+# Estas son las cosas que el Ayudante va a hacer, paso a paso.
+jobs:
+  construir_y_desplegar:
+    # Donde el Ayudante va a trabajar (imagina que es su mesita).
+    runs-on: ubuntu-latest
+
+    # ¡Ahora, las tareas que dijimos en la nota!
+    steps:
+      # Tarea 1: Sacar el dibujo del álbum.
+      - name: ¡Quiero ver mi dibujo!
+        uses: actions/checkout@v4
+
+      # Tarea 2: Empaquetar el dibujo.
+      # Para una página web simple, no necesitamos "construir" mucho,
+      # solo asegurarnos de que todo está ahí.
+      - name: ¡Mi dibujo está listo para ser empaquetado!
+        run: echo "¡El dibujo ya está en su cajita!" # En realidad, aquí no hace nada especial, ¡ya está listo!
+
+      # Tarea 3: Poner el dibujo en la pared mágica.
+      # Esta es una acción especial para poner páginas web en GitHub.
+      - name: ¡Pon el dibujo en la pared mágica!
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Una llave secreta para que el Ayudante pueda abrir la pared.
+          publish_dir: ./ # Le dice dónde está el dibujo en su cajita.
