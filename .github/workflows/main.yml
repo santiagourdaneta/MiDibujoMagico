@@ -1,5 +1,8 @@
 # Este es el nombre de la tarea que el Ayudante va a hacer.
 name: Llevar mi Dibujo a la Pared Mágica
+permissions:
+  contents: read
+  pages: write
 
 # Dile al Ayudante cuándo debe empezar a trabajar.
 # Aquí le decimos: "¡Cada vez que alguien ponga un dibujo nuevo en el álbum principal!"
